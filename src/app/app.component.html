@@ -1,0 +1,24 @@
+<div>
+    {{title | shoutpipe}}
+    <br/>
+    <app-button [item]="'Talia'" (timeHandler)='setTime($event)'>Talia Button</app-button>
+    <br/>
+    <app-button [item]="'Tyrel'" (timeHandler)='setTime($event)'>Tyrel Button</app-button>
+    <br/>
+    <br/>
+    <div>talia: {{time}}</div>
+    <div>tyrel: {{time}}</div>
+    <a routerLink="/first-view" routerLinkActive="active">First View Link</a>
+    <a routerLink="/second-view" routerLinkActive="active">Second View Link</a>
+    <br/>
+    <br/>
+    <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+        Firstname: <input type="text" formControlName="firstname"><br/>
+        Lastname: <input type="text" formControlName="lastname"><br/>
+        <button type="submit">Show me value</button>
+    </form>
+    <input #timeRef name="forTest" type="text" [(ngModel)]="time" [value]="time">
+    <h1>{{timeRef.value}}</h1>  
+    <button (click)="onClick()" type="button">Set Time Please</button>
+</div>
+<router-outlet></router-outlet>
